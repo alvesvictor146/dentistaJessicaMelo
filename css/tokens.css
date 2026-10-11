@@ -1,0 +1,73 @@
+:root {
+  /* Brand Primary Colors */
+  --gold-100: #FBF4E2;
+  --gold-200: #F3E3BC;
+  --gold-300: #E6C981;
+  --gold-400: #D8B35C;
+  --gold-500: #C9A24A;
+  --gold-600: #B18A37;
+  --gold-700: #936E27;
+  --gold-gradient: linear-gradient(135deg, #F5DF9E 0%, #C9A24A 50%, #9C7A2E 100%);
+  --gold-metallic: linear-gradient(135deg, #FBF4E2 0%, #D8B35C 30%, #F5DF9E 60%, #9C7A2E 100%);
+
+  /* Deep Royal Navy */
+  --navy-100: #EBF1FA;
+  --navy-300: #8FAEDB;
+  --navy-500: #29539B;
+  --navy-700: #1B3C73;
+  --navy-800: #12284E;
+  --navy-900: #0B1933;
+  --navy-950: #060E1D;
+  --navy-gradient: linear-gradient(135deg, #1B3C73 0%, #0B1933 100%);
+
+  /* Warm Porcelain / Cream Neutrals */
+  --bg-body: #FAF7F2;
+  --bg-surface: #FFFFFF;
+  --bg-surface-translucent: rgba(255, 255, 255, 0.85);
+  --bg-card: rgba(255, 255, 255, 0.92);
+  --bg-dark-card: rgba(18, 40, 78, 0.65);
+
+  /* Text & Inks */
+  --text-main: #181E29;
+  --text-muted: #5E697C;
+  --text-light: #9CA8BA;
+  --text-on-dark: #F8FAFC;
+  --text-on-dark-muted: #CBD5E1;
+
+  /* Accent & Status */
+  --whatsapp-green: #25D366;
+  --whatsapp-dark: #128C7E;
+  --google-yellow: #FBBC04;
+
+  /* Elevation & Glows */
+  --shadow-sm: 0 4px 12px rgba(11, 25, 51, 0.04);
+  --shadow-md: 0 10px 30px rgba(11, 25, 51, 0.08);
+  --shadow-lg: 0 20px 50px rgba(11, 25, 51, 0.12);
+  --shadow-gold: 0 12px 36px rgba(201, 162, 74, 0.28);
+  --shadow-glow: 0 0 40px rgba(201, 162, 74, 0.35);
+
+  /* Borders & Glass */
+  --border-subtle: rgba(201, 162, 74, 0.18);
+  --border-light: rgba(27, 60, 115, 0.08);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.4);
+  --glass-dark-border: 1px solid rgba(201, 162, 74, 0.25);
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-display: 'Cinzel', 'Cormorant Garamond', serif;
+
+  /* Layout */
+  --container-max: 1280px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions & Springs */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-fast: 0.25s var(--ease-out-expo);
+  --transition-medium: 0.45s var(--ease-out-expo);
+  --transition-slow: 0.8s var(--ease-out-expo);
+}

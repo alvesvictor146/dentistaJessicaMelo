@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" class="jr-logo-svg">
+  <defs>
+    <!-- Gold Linear Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EED289"/>
+      <stop offset="35%" stop-color="#C9A24A"/>
+      <stop offset="70%" stop-color="#9C7A2E"/>
+      <stop offset="100%" stop-color="#DDB965"/>
+    </linearGradient>
+    
+    <!-- Royal Navy Gradient -->
+    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#265096"/>
+      <stop offset="50%" stop-color="#16386C"/>
+      <stop offset="100%" stop-color="#0E2347"/>
+    </linearGradient>
+
+    <!-- Subtle Drop Shadow -->
+    <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#c9a24a" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <g class="logo-mark" filter="url(#logoGlow)" transform="translate(10, 0)">
+    <!-- Tooth left cusp and J monogram (Gold) -->
+    <path class="draw-path gold-path" fill="none" stroke="url(#goldGrad)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"
+      d="M 235 95 
+         C 200 80, 160 85, 145 120 
+         C 130 155, 135 220, 150 270 
+         C 160 300, 175 340, 195 380 
+         C 210 405, 220 380, 228 350 
+         C 235 320, 238 290, 240 260" />
+
+    <!-- J inner loop / stylized stem -->
+    <path class="draw-path gold-path-inner" fill="none" stroke="url(#goldGrad)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"
+      d="M 180 150 
+         L 230 150 
+         C 230 190, 230 250, 230 290 
+         C 230 330, 205 345, 175 330 
+         C 155 320, 150 295, 155 285" />
+
+    <!-- Tooth right cusp and R monogram (Navy Blue) -->
+    <path class="draw-path navy-path" fill="none" stroke="url(#navyGrad)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"
+      d="M 245 95 
+         C 280 80, 320 85, 335 120 
+         C 350 155, 345 220, 330 270 
+         C 320 300, 305 340, 285 380 
+         C 270 405, 260 380, 252 350 
+         C 245 320, 242 290, 240 260" />
+
+    <!-- R inner loop and dynamic swoop leg -->
+    <path class="draw-path navy-path-inner" fill="none" stroke="url(#navyGrad)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"
+      d="M 250 150 
+         L 295 150 
+         C 325 150, 330 195, 295 215 
+         L 250 215 
+         M 285 215 
+         C 305 245, 325 305, 345 335" />
+
+    <!-- Central crest / bridge -->
+    <path class="draw-path gold-bridge" fill="none" stroke="url(#goldGrad)" stroke-width="8" stroke-linecap="round"
+      d="M 215 95 C 235 110, 245 110, 265 95" />
+  </g>
+
+  <!-- Typography matching exact brand structure -->
+  <g class="logo-typography" text-anchor="middle">
+    <!-- Subtitle 1: ODONTOLOGIA INTEGRADA -->
+    <text x="250" y="420" font-family="'Montserrat', sans-serif" font-size="16" font-weight="600" fill="#16386C" letter-spacing="6">
+      ODONTOLOGIA INTEGRADA
+    </text>
+
+    <!-- Main Title: DRA. JÉSSICA MELO -->
+    <text x="250" y="458" font-family="'Cormorant Garamond', serif" font-size="34" font-weight="700" fill="#C9A24A" letter-spacing="3">
+      DRA. JÉSSICA MELO
+    </text>
+
+    <!-- Subtitle 2: CIRURGIÃ DENTISTA -->
+    <text x="250" y="485" font-family="'Montserrat', sans-serif" font-size="12" font-weight="500" fill="#9C7A2E" letter-spacing="7">
+      CIRURGIÃ DENTISTA
+    </text>
+  </g>
+</svg>

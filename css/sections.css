@@ -1,0 +1,1234 @@
+/* ==========================================================
+   HEADER / NAVBAR
+========================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 18px 0;
+  transition: padding 0.3s ease, background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+  padding: 12px 0;
+  background: rgba(250, 247, 242, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201, 162, 74, 0.22);
+  box-shadow: 0 10px 30px rgba(11, 25, 51, 0.08);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.header-logo-icon {
+  width: 46px;
+  height: 46px;
+  transition: transform 0.4s var(--ease-elastic);
+}
+
+.header-logo-link:hover .header-logo-icon {
+  transform: rotate(-6deg) scale(1.08);
+}
+
+.header-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-brand-sub {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  color: var(--navy-700);
+  text-transform: uppercase;
+}
+
+.header-brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--gold-600);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+.header-brand-spec {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  font-weight: 500;
+  color: var(--gold-700);
+  text-transform: uppercase;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--navy-800);
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold-gradient);
+  transition: width 0.3s var(--ease-out-expo);
+  border-radius: 2px;
+}
+
+.nav-link:hover {
+  color: var(--gold-600);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-cta-btn {
+  padding: 12px 26px;
+  font-size: 0.88rem;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--navy-800);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* ==========================================================
+   HERO SECTION
+========================================================== */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 140px;
+  padding-bottom: 80px;
+  overflow: hidden;
+  background: radial-gradient(circle at 80% 20%, rgba(201, 162, 74, 0.12) 0%, transparent 60%),
+              radial-gradient(circle at 10% 80%, rgba(27, 60, 115, 0.08) 0%, transparent 50%),
+              var(--bg-body);
+}
+
+.hero-bg-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 162, 74, 0.18) 0%, rgba(201, 162, 74, 0) 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  top: 10%;
+  right: 5%;
+  z-index: 1;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #FFFFFF;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(201, 162, 74, 0.3);
+  box-shadow: 0 4px 16px rgba(11, 25, 51, 0.06);
+  margin-bottom: 24px;
+}
+
+.hero-rating-stars {
+  color: var(--google-yellow);
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+}
+
+.hero-rating-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--navy-800);
+}
+
+.hero-rating-text strong {
+  color: var(--gold-600);
+}
+
+.hero-title {
+  font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--navy-900);
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+.hero-title .char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 540px;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.hero-highlights-strip {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(201, 162, 74, 0.2);
+}
+
+.hero-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-highlight-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(201, 162, 74, 0.12);
+  color: var(--gold-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.hero-highlight-text strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--navy-900);
+  font-weight: 600;
+}
+
+.hero-highlight-text span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Hero Visual & 3D floating artwork */
+.hero-visual-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-visual-frame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 4/5;
+  border-radius: 200px 200px 32px 32px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(11, 25, 51, 0.15), 0 0 30px rgba(201, 162, 74, 0.2);
+  border: 4px solid #FFFFFF;
+}
+
+.hero-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  transition: transform 0.8s var(--ease-out-expo);
+}
+
+.hero-visual-frame:hover .hero-main-img {
+  transform: scale(1.12);
+}
+
+/* Floating 3D Gold Tooth sculpture element */
+.hero-floating-tooth {
+  position: absolute;
+  top: -25px;
+  right: -30px;
+  width: 170px;
+  height: 170px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px;
+  box-shadow: 0 20px 45px rgba(201, 162, 74, 0.35);
+  border: 2px solid rgba(201, 162, 74, 0.4);
+  backdrop-filter: blur(12px);
+  z-index: 4;
+  animation: floatTooth 5s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.hero-floating-tooth img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+  transition: transform 0.5s ease;
+}
+
+.hero-floating-tooth:hover img {
+  transform: rotate(6deg) scale(1.08);
+}
+
+.floating-tooth-caption {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy-900);
+  color: var(--gold-300);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Floating Clinic Excellence Badge */
+.hero-floating-badge {
+  position: absolute;
+  bottom: 30px;
+  left: -35px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 15px 40px rgba(11, 25, 51, 0.12);
+  border: 1px solid rgba(201, 162, 74, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 4;
+  animation: floatBadge 6s ease-in-out infinite alternate;
+}
+
+.floating-badge-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--gold-500);
+  overflow: hidden;
+}
+
+.floating-badge-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.floating-badge-info h5 {
+  font-size: 0.88rem;
+  color: var(--navy-900);
+  margin-bottom: 2px;
+}
+
+.floating-badge-info p {
+  font-size: 0.75rem;
+  color: var(--gold-600);
+  font-weight: 600;
+}
+
+@keyframes floatTooth {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+@keyframes floatBadge {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-12px); }
+}
+
+/* ==========================================================
+   INFINITE MARQUEE TICKER
+========================================================== */
+.marquee-ticker-section {
+  background: var(--navy-900);
+  color: var(--gold-300);
+  padding: 18px 0;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid rgba(201, 162, 74, 0.3);
+  border-bottom: 1px solid rgba(201, 162, 74, 0.3);
+}
+
+.marquee-track {
+  display: flex;
+  width: fit-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding-right: 48px;
+  white-space: nowrap;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-200);
+}
+
+.marquee-item i {
+  color: var(--gold-500);
+  font-size: 0.75rem;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==========================================================
+   ABOUT SECTION (DRA. JESSICA MELO)
+========================================================== */
+.about-section {
+  padding: 120px 0;
+  position: relative;
+  background: var(--bg-body);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.about-image-wrapper {
+  position: relative;
+}
+
+.about-image-mask {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  border: 1px solid rgba(201, 162, 74, 0.25);
+}
+
+.about-image-mask img {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.about-image-mask:hover img {
+  transform: scale(1.05);
+}
+
+.about-floating-experience-card {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  background: var(--navy-900);
+  color: #FFFFFF;
+  padding: 24px 28px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gold-500);
+  box-shadow: var(--shadow-gold);
+  z-index: 3;
+}
+
+.about-floating-exp-num {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--gold-300);
+  line-height: 1;
+}
+
+.about-floating-exp-label {
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy-100);
+}
+
+.about-content-col {
+  padding-left: 20px;
+}
+
+.about-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  color: var(--navy-900);
+  margin-bottom: 24px;
+}
+
+.about-bio-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(201, 162, 74, 0.2);
+}
+
+.about-stat-item h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--navy-800);
+  margin-bottom: 4px;
+}
+
+.about-stat-item p {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ==========================================================
+   TREATMENTS / SERVICES (3D HOVER TILT CARDS)
+========================================================== */
+.treatments-section {
+  padding: 120px 0;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.section-header-center {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 64px auto;
+}
+
+.section-header-center h2 {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  color: var(--navy-900);
+  margin-bottom: 16px;
+}
+
+.treatments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.tilt-card-wrapper {
+  perspective: 1000px;
+}
+
+.treatment-tilt-card {
+  background: #FAF7F2;
+  border: 1px solid rgba(201, 162, 74, 0.2);
+  border-radius: var(--radius-md);
+  padding: 40px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease, border-color 0.4s ease;
+  transform-style: preserve-3d;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.treatment-tilt-card:hover {
+  border-color: var(--gold-500);
+  box-shadow: 0 20px 45px rgba(201, 162, 74, 0.18);
+}
+
+/* Dynamic reflection light tracking mouse */
+.card-specular-light {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle 250px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.65), transparent 80%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.treatment-tilt-card:hover .card-specular-light {
+  opacity: 1;
+}
+
+.treatment-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(201, 162, 74, 0.15);
+  border: 1px solid rgba(201, 162, 74, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--gold-600);
+  margin-bottom: 24px;
+  transition: transform 0.4s var(--ease-elastic), background 0.3s ease;
+}
+
+.treatment-tilt-card:hover .treatment-icon-wrap {
+  transform: scale(1.1) rotate(-6deg);
+  background: var(--gold-500);
+  color: #FFFFFF;
+}
+
+.treatment-card-title {
+  font-size: 1.45rem;
+  color: var(--navy-900);
+  margin-bottom: 14px;
+}
+
+.treatment-card-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.treatment-card-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--gold-700);
+  text-decoration: none;
+  transition: gap 0.25s ease, color 0.25s ease;
+}
+
+.treatment-card-action:hover {
+  gap: 12px;
+  color: var(--navy-800);
+}
+
+/* ==========================================================
+   INTERACTIVE BEFORE & AFTER SMILE COMPARISON
+========================================================== */
+.transformation-section {
+  padding: 120px 0;
+  background: var(--bg-body);
+}
+
+.comparison-container {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid rgba(201, 162, 74, 0.3);
+  user-select: none;
+  height: 520px;
+  background: #111;
+}
+
+.comparison-before,
+.comparison-after {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.comparison-before img,
+.comparison-after img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.comparison-after {
+  width: 50%;
+  border-right: 2px solid var(--gold-300);
+  filter: saturate(1.15) contrast(1.05);
+}
+
+.comparison-tag {
+  position: absolute;
+  top: 24px;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  z-index: 5;
+}
+
+.tag-before {
+  right: 24px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #FFFFFF;
+}
+
+.tag-after {
+  left: 24px;
+  background: var(--gold-500);
+  color: var(--navy-950);
+}
+
+.comparison-slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: var(--gold-400);
+  transform: translateX(-50%);
+  cursor: ew-resize;
+  z-index: 10;
+}
+
+.slider-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3px solid var(--gold-500);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy-900);
+  font-size: 1.1rem;
+}
+
+/* ==========================================================
+   EXPERIÊNCIA / TECNOLOGIA (DARK ROYAL LUXURY)
+========================================================== */
+.experience-section {
+  padding: 130px 0;
+  background: radial-gradient(circle at 80% 20%, rgba(201, 162, 74, 0.15) 0%, transparent 50%),
+              var(--navy-950);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.experience-title {
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  color: #FFFFFF;
+  margin-bottom: 24px;
+}
+
+.experience-desc {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-on-dark-muted);
+  margin-bottom: 40px;
+}
+
+.experience-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 44px;
+}
+
+.exp-feature-item {
+  display: flex;
+  gap: 20px;
+}
+
+.exp-feature-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(201, 162, 74, 0.15);
+  border: 1px solid rgba(201, 162, 74, 0.35);
+  color: var(--gold-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.exp-feature-info h4 {
+  font-size: 1.15rem;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.exp-feature-info p {
+  font-size: 0.92rem;
+  color: var(--text-on-dark-muted);
+}
+
+.experience-media-wrap {
+  position: relative;
+}
+
+.exp-main-img-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(201, 162, 74, 0.3);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+.exp-main-img-card img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================================
+   REVIEWS & SOCIAL PROOF (5.0 NO GOOGLE)
+========================================================== */
+.reviews-section {
+  padding: 120px 0;
+  background: var(--bg-body);
+}
+
+.google-verified-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.google-logo-badge {
+  background: #FFFFFF;
+  border: 1px solid rgba(201, 162, 74, 0.3);
+  padding: 10px 24px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.review-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 36px 30px;
+  border: 1px solid rgba(201, 162, 74, 0.18);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--gold-400);
+}
+
+.review-stars {
+  color: var(--google-yellow);
+  font-size: 1rem;
+  margin-bottom: 18px;
+  letter-spacing: 2px;
+}
+
+.review-text {
+  font-size: 0.98rem;
+  font-style: italic;
+  color: var(--navy-900);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.reviewer-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.reviewer-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--navy-100);
+  color: var(--navy-800);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+}
+
+.reviewer-name h5 {
+  font-size: 0.92rem;
+  color: var(--navy-900);
+  margin-bottom: 2px;
+}
+
+.reviewer-name span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================
+   BOOKING APPOINTMENT / WHATSAPP VIP CTA
+========================================================== */
+.booking-section {
+  padding: 100px 0;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.booking-card-wrapper {
+  background: radial-gradient(circle at 10% 20%, rgba(201, 162, 74, 0.15) 0%, transparent 60%),
+              var(--navy-900);
+  border-radius: var(--radius-lg);
+  padding: 60px 50px;
+  border: 1px solid var(--gold-500);
+  box-shadow: var(--shadow-lg);
+  color: #FFFFFF;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.booking-info h2 {
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  color: #FFFFFF;
+  margin-bottom: 18px;
+}
+
+.booking-info p {
+  color: var(--text-on-dark-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.booking-channel-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  padding: 14px 22px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+}
+
+.booking-channel-badge i {
+  color: var(--whatsapp-green);
+  font-size: 1.8rem;
+}
+
+.booking-channel-badge span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.booking-form-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  padding: 36px 32px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(201, 162, 74, 0.25);
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold-200);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.form-input, .form-select {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(201, 162, 74, 0.3);
+  border-radius: var(--radius-sm);
+  color: var(--navy-900);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus, .form-select:focus {
+  border-color: var(--gold-500);
+  box-shadow: 0 0 10px rgba(201, 162, 74, 0.4);
+}
+
+/* ==========================================================
+   LOCATION & CONTACT (SÃO MIGUEL PAULISTA)
+========================================================== */
+.location-section {
+  padding: 120px 0;
+  background: var(--bg-body);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.contact-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 40px;
+  border: 1px solid rgba(201, 162, 74, 0.22);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-item {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.contact-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(201, 162, 74, 0.12);
+  color: var(--gold-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.contact-details h5 {
+  font-size: 1rem;
+  color: var(--navy-900);
+  margin-bottom: 4px;
+}
+
+.contact-details p, .contact-details a {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  color: var(--gold-600);
+}
+
+.map-wrapper {
+  height: 460px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(201, 162, 74, 0.3);
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+.site-footer {
+  background: var(--navy-950);
+  color: #FFFFFF;
+  padding: 80px 0 30px 0;
+  border-top: 1px solid rgba(201, 162, 74, 0.25);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 50px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-logo-desc {
+  margin-top: 18px;
+  color: var(--text-on-dark-muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  max-width: 320px;
+}
+
+.footer-col h4 {
+  font-size: 1.05rem;
+  color: var(--gold-300);
+  margin-bottom: 22px;
+  letter-spacing: 0.05em;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  color: var(--text-on-dark-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--gold-400);
+  transform: translateX(4px);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ==========================================================
+   RESPONSIVE QUERIES
+========================================================== */
+@media (max-width: 1024px) {
+  .hero-grid, .about-grid, .experience-grid, .location-grid, .booking-card-wrapper {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .treatments-grid, .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-content-col {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: block;
+  }
+  .treatments-grid, .reviews-grid, .about-stats-grid, .footer-top {
+    grid-template-columns: 1fr;
+  }
+  .hero-floating-tooth {
+    width: 120px;
+    height: 120px;
+    right: 0px;
+  }
+  .hero-floating-badge {
+    left: 0px;
+    bottom: -15px;
+  }
+  .comparison-container {
+    height: 380px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+}
