@@ -481,6 +481,8 @@
   height: 540px;
   object-fit: cover;
   display: block;
+  transform: scale(1.4);
+  transform-origin: 58% 48%;
   transition: transform 0.8s ease;
 }
 
