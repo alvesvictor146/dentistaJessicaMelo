@@ -364,3 +364,33 @@ p {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
+
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .floating-whatsapp-widget {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .floating-whatsapp-bubble {
+    white-space: normal;
+    max-width: calc(100vw - 98px);
+    font-size: 0.78rem;
+    padding: 8px 14px;
+    line-height: 1.35;
+  }
+
+  .floating-whatsapp-btn {
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+  }
+}
