@@ -1319,3 +1319,60 @@
     padding: 28px 20px;
   }
 }
+
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 10px 0;
+    background: rgba(250, 247, 242, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(201, 162, 74, 0.18);
+  }
+  .header-brand-sub,
+  .header-brand-name,
+  .header-brand-spec {
+    white-space: nowrap;
+  }
+  .header-brand-sub,
+  .header-brand-spec {
+    font-size: 0.48rem;
+    letter-spacing: 0.1em;
+  }
+  .header-brand-name {
+    font-size: 0.95rem;
+  }
+  .header-cta-btn {
+    padding: 7px 11px;
+    font-size: 0.7rem;
+  }
+  .hero-section {
+    padding-top: 105px !important;
+    align-items: flex-start;
+  }
+  .hero-grid,
+  .about-grid,
+  .experience-grid,
+  .location-grid,
+  .booking-card-wrapper,
+  .treatments-grid,
+  .reviews-grid,
+  .about-stats-grid,
+  .footer-top {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero-rating-badge {
+    max-width: 100%;
+    flex-wrap: wrap;
+    padding: 6px 12px;
+    gap: 6px;
+    margin-top: 8px;
+    margin-bottom: 18px;
+  }
+  .hero-rating-stars {
+    font-size: 0.82rem;
+  }
+  .hero-rating-text {
+    font-size: 0.74rem;
+  }
+}

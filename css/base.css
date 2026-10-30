@@ -6,6 +6,8 @@
 
 html {
   scroll-behavior: auto; /* Managed by Lenis smooth scroll */
+  overflow-x: hidden;
+  max-width: 100%;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
