@@ -9,12 +9,11 @@ function initBooking() {
     e.preventDefault();
 
     const name = document.getElementById('bookName')?.value.trim() || 'Paciente';
-    const service = document.getElementById('bookService')?.value || 'Consulta Inicial / Avaliação';
-    const shift = document.getElementById('bookShift')?.value || 'Manhã';
+    const service = document.getElementById('bookService')?.value || 'Avaliação Geral';
+    const shift = document.getElementById('bookShift')?.value || 'Manhã (8h às 12h)';
     const notes = document.getElementById('bookNotes')?.value.trim() || '';
 
-    let message = `Olá, Dra. Jéssica Melo! 👋\n\n`;
-    message += `Gostaria de solicitar um agendamento na *JR Odontologia Integrada*.\n\n`;
+    let message = `Olá, Dra. Jéssica! Vim pelo site e gostaria de agendar uma avaliação.\n\n`;
     message += `👤 *Nome:* ${name}\n`;
     message += `🦷 *Tratamento de interesse:* ${service}\n`;
     message += `🕒 *Preferência de horário:* ${shift}\n`;
@@ -26,11 +25,18 @@ function initBooking() {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${CLINIC_WHATSAPP_NUMBER}?text=${encodedMessage}`;
 
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'form_whatsapp',
+      servico: service,
+      turno: shift
+    });
+
     // Open WhatsApp
     window.open(whatsappUrl, '_blank');
   });
 
-  // Floating WhatsApp bubble auto-display after 4 seconds
+  // Floating WhatsApp bubble auto-display after 3.5 seconds
   const bubble = document.querySelector('.floating-whatsapp-bubble');
   if (bubble) {
     setTimeout(() => {

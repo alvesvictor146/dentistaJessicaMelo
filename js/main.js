@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const preloader = document.getElementById('sitePreloader');
   const barFill = document.querySelector('.preloader-bar-fill');
 
+  const isTouchMobile = window.matchMedia('(pointer: coarse)').matches || window.innerWidth <= 768;
+  if (isTouchMobile) {
+    if (preloader) preloader.classList.add('loaded');
+    initScrollAndEntranceAnimations();
+  } else {
   let progress = 0;
   const progressInterval = setInterval(() => {
     progress += Math.floor(Math.random() * 20) + 10;
@@ -18,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         initScrollAndEntranceAnimations();
       }, 500);
     }
-  }, 100);
+  }, 80);
+  }
 
   // 2. Scroll Progress Bar & Header Glass Effect
   const progressBar = document.querySelector('.scroll-progress-bar');

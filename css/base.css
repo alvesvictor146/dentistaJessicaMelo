@@ -396,3 +396,9 @@ p {
     flex-shrink: 0;
   }
 }
+
+@media (max-width: 768px) {
+  .site-preloader {
+    display: none !important;
+  }
+}

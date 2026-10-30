@@ -15,12 +15,12 @@ class SmileComparison {
     const moveSlider = (clientX) => {
       const rect = this.container.getBoundingClientRect();
       let pos = (clientX - rect.left) / rect.width;
-      
+
       // Constrain within 5% to 95%
       pos = Math.max(0.05, Math.min(0.95, pos));
-      
+
       const percent = pos * 100;
-      this.afterPane.style.width = `${percent}%`;
+      this.afterPane.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
       this.handle.style.left = `${percent}%`;
     };
 
@@ -45,12 +45,14 @@ class SmileComparison {
       }
     }, { passive: true });
 
-    // Interactive hover slide when hovering over container without click
-    this.container.addEventListener('mousemove', (e) => {
-      if (!this.isDragging) {
-        moveSlider(e.clientX);
-      }
-    });
+    // Interactive hover slide when hovering over container on non-touch devices
+    if (!window.matchMedia('(pointer: coarse)').matches) {
+      this.container.addEventListener('mousemove', (e) => {
+        if (!this.isDragging) {
+          moveSlider(e.clientX);
+        }
+      });
+    }
   }
 }
 
