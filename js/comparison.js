@@ -2,10 +2,10 @@
 class SmileComparison {
   constructor() {
     this.container = document.querySelector('.comparison-container');
-    this.afterPane = document.querySelector('.comparison-after');
+    this.overlayPane = document.querySelector('.comparison-before');
     this.handle = document.querySelector('.comparison-slider-handle');
 
-    if (!this.container || !this.afterPane || !this.handle) return;
+    if (!this.container || !this.overlayPane || !this.handle) return;
 
     this.isDragging = false;
     this.init();
@@ -20,15 +20,24 @@ class SmileComparison {
       pos = Math.max(0.05, Math.min(0.95, pos));
 
       const percent = pos * 100;
-      this.afterPane.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+      this.overlayPane.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+      this.overlayPane.style.webkitClipPath = `inset(0 ${100 - percent}% 0 0)`;
       this.handle.style.left = `${percent}%`;
     };
 
     // Mouse & Touch events
-    const startDrag = () => { this.isDragging = true; };
+    const startDrag = (e) => {
+      this.isDragging = true;
+      if (e.clientX !== undefined) {
+        moveSlider(e.clientX);
+      } else if (e.touches && e.touches[0]) {
+        moveSlider(e.touches[0].clientX);
+      }
+    };
     const stopDrag = () => { this.isDragging = false; };
 
     this.handle.addEventListener('mousedown', startDrag);
+    this.container.addEventListener('mousedown', startDrag);
     window.addEventListener('mouseup', stopDrag);
     window.addEventListener('mousemove', (e) => {
       if (this.isDragging) {
@@ -38,6 +47,7 @@ class SmileComparison {
 
     // Touch support for smartphones
     this.handle.addEventListener('touchstart', startDrag, { passive: true });
+    this.container.addEventListener('touchstart', startDrag, { passive: true });
     window.addEventListener('touchend', stopDrag);
     window.addEventListener('touchmove', (e) => {
       if (this.isDragging && e.touches[0]) {

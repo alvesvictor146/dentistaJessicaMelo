@@ -397,7 +397,7 @@
               <span>Dente quebrado ou trincado</span>
             </div>
             <div class="urgency-item">
-              <div class="urgency-item-icon"><i class="fa-solid fa-Triangle-exclamation"></i></div>
+              <div class="urgency-item-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
               <span>Dente mole após pancada</span>
             </div>
             <div class="urgency-item">
@@ -429,13 +429,13 @@
         </div>
 
         <div class="comparison-container" aria-label="Comparação de antes e depois">
-          <div class="comparison-before">
-            <img src="assets/img/antes.jpg" alt="Caso clínico antes do tratamento - Dra. Jéssica Melo" loading="lazy" decoding="async">
-            <div class="comparison-tag tag-before">ANTES</div>
-          </div>
           <div class="comparison-after">
             <img src="assets/img/depois.jpg" alt="Caso clínico depois do tratamento - Dra. Jéssica Melo" loading="lazy" decoding="async">
             <div class="comparison-tag tag-after">DEPOIS</div>
+          </div>
+          <div class="comparison-before">
+            <img src="assets/img/antes.jpg" alt="Caso clínico antes do tratamento - Dra. Jéssica Melo" loading="lazy" decoding="async">
+            <div class="comparison-tag tag-before">ANTES</div>
           </div>
           <div class="comparison-slider-handle">
             <div class="slider-circle">
@@ -810,5 +810,22 @@
   <script src="js/comparison.js?v=3" defer></script>
   <script src="js/booking.js?v=3" defer></script>
   <script src="js/main.js?v=3" defer></script>
+
+  <!-- Rastreamento de Cliques (WhatsApp & Telefone) -->
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    var secao = (a.closest('section') || {}).id || 'cabecalho';
+    var botao = a.id || a.innerText.trim().slice(0, 40) || 'sem-texto';
+    if (h.indexOf('wa.me') > -1 || h.indexOf('api.whatsapp.com') > -1) {
+      window.dataLayer.push({ event: 'whatsapp_click', botao: botao, secao: secao });
+    } else if (h.indexOf('tel:') === 0) {
+      window.dataLayer.push({ event: 'phone_click', botao: botao, secao: secao });
+    }
+  }, true);
+  </script>
 </body>
 </html>

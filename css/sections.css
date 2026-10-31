@@ -728,14 +728,23 @@
   z-index: 5;
 }
 
+.comparison-before {
+  clip-path: inset(0 50% 0 0);
+  -webkit-clip-path: inset(0 50% 0 0);
+}
+
 .tag-before {
-  right: 24px;
+  left: 24px !important;
+  right: auto !important;
+
   background: rgba(0, 0, 0, 0.6);
   color: #FFFFFF;
 }
 
 .tag-after {
-  left: 24px;
+  right: 24px !important;
+  left: auto !important;
+
   background: var(--gold-500);
   color: var(--navy-950);
 }
@@ -1395,7 +1404,7 @@
 .comparison-after {
   width: 100%;
   border-right: none;
-  clip-path: inset(0 50% 0 0);
+  /* no clip on base */
   filter: none;
 }
 
